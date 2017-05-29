@@ -19,7 +19,7 @@ public:
 	void printstack()
 	{
 		for (int i = currentElem-1; i >= 0; i--)
-			std::cout << mass[i]<<"I";
+			std::cout << mass[i]<<"|";
 	}
 	void push(const ELEM& elem)
 	{
