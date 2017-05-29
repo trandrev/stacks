@@ -16,23 +16,28 @@ public:
 	{
 		this->mass = new ELEM[size];
 	}
+	void printstack()
+	{
+		for (int i = currentElem-1; i >= 0; i--)
+			std::cout << mass[i]<<"|";
+	}
 	void push(const ELEM& elem)
 	{
-		if (this->currentElem == this->maxSize) // Íå ïåðåïîëíåí ëè ñòåê?
+		if (this->currentElem == this->maxSize) // ÃÃ¥ Ã¯Ã¥Ã°Ã¥Ã¯Ã®Ã«Ã­Ã¥Ã­ Ã«Ã¨ Ã±Ã²Ã¥Ãª?
 			throw 1;
 		
 		this->mass[this->currentElem++] = elem;
 	}
-	ELEM pop()//Âîçâðàùàåò è âûðåçàåò ïîñëåäíèé
+	ELEM pop()//Ã‚Ã®Ã§Ã¢Ã°Ã Ã¹Ã Ã¥Ã² Ã¨ Ã¢Ã»Ã°Ã¥Ã§Ã Ã¥Ã² Ã¯Ã®Ã±Ã«Ã¥Ã¤Ã­Ã¨Ã©
 	{
-		if (this->currentElem == 0) // Íå ïåðåïîëíåí ëè ñòåê?
+		if (this->currentElem == 0) // ÃÃ¥ Ã¯Ã¥Ã°Ã¥Ã¯Ã®Ã«Ã­Ã¥Ã­ Ã«Ã¨ Ã±Ã²Ã¥Ãª?
 			throw 2;
 
 		return this->mass[--this->currentElem];
 	}
 	ELEM back()
 	{
-		if (this->currentElem == 0) // Íå ïåðåïîëíåí ëè ñòåê?
+		if (this->currentElem == 0) // ÃÃ¥ Ã¯Ã¥Ã°Ã¥Ã¯Ã®Ã«Ã­Ã¥Ã­ Ã«Ã¨ Ã±Ã²Ã¥Ãª?
 			throw 2;
 
 		return this->mass[this->currentElem-1];
